@@ -52,7 +52,7 @@
     for (int i = 0; i < 3; ++i) {
         cell = [[BadgeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", i];
-        cell.badgeText = [NSString stringWithFormat:@"%d", lround( pow(7, 1+i) )];
+        cell.badgeNumber = lround( pow(7, 1+i) );
         [cells addObject:cell];
     }
 }

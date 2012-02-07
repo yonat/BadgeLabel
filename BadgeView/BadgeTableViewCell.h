@@ -12,6 +12,6 @@
 @interface BadgeTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) BadgeLabel *badge;
-@property (weak, nonatomic) NSString *badgeText;
+@property (nonatomic) NSInteger badgeNumber; // for convenience
 
 @end

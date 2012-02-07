@@ -30,17 +30,17 @@
     [self.contentView addSubview:badge];
 }
 
-- (NSString *)badgeText
+- (NSInteger)badgeNumber
 {
     if (self.badge) {
-        return self.badge.text;
+        return [self.badge.text integerValue];
     }
-    return nil;
+    return 0;
 }
 
-- (void)setBadgeText:(NSString *)badgeText
+- (void)setBadgeNumber:(NSInteger)badgeNumber
 {
-    if ([badgeText length] == 0) {
+    if (badgeNumber == 0) {
         badge.hidden = YES;
         return;
     }
@@ -49,7 +49,7 @@
         [self createBadge];
     }
 
-    badge.text = badgeText;
+    badge.text = [NSString stringWithFormat:@"%d", badgeNumber];
     badge.hidden = NO;
     [self layoutBadge];
 }
