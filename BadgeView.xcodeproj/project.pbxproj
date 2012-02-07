@@ -15,6 +15,9 @@
 		DCAF789014E115EB00948273 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAF788F14E115EB00948273 /* AppDelegate.m */; };
 		DCAF789314E115EC00948273 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCAF789114E115EC00948273 /* MainStoryboard.storyboard */; };
 		DCAF789614E115EC00948273 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAF789514E115EC00948273 /* ViewController.m */; };
+		DCAF78A014E145FC00948273 /* BadgeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAF789C14E145FB00948273 /* BadgeTableViewCell.m */; };
+		DCAF78A114E145FC00948273 /* BadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAF789F14E145FC00948273 /* BadgeLabel.m */; };
+		DCAF78A314E147C400948273 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAF78A214E147C400948273 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +25,20 @@
 		DCAF787F14E115EB00948273 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DCAF788114E115EB00948273 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DCAF788314E115EB00948273 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DCAF788714E115EB00948273 /* BadgeView-Info.plist */ = {isa = PBXFileReference; path = "BadgeView-Info.plist"; sourceTree = "<group>"; };
+		DCAF788714E115EB00948273 /* BadgeView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BadgeView-Info.plist"; sourceTree = "<group>"; };
 		DCAF788914E115EB00948273 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DCAF788B14E115EB00948273 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DCAF788D14E115EB00948273 /* BadgeView-Prefix.pch */ = {isa = PBXFileReference; path = "BadgeView-Prefix.pch"; sourceTree = "<group>"; };
-		DCAF788E14E115EB00948273 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCAF788D14E115EB00948273 /* BadgeView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BadgeView-Prefix.pch"; sourceTree = "<group>"; };
+		DCAF788E14E115EB00948273 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCAF788F14E115EB00948273 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCAF789214E115EC00948273 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DCAF789414E115EC00948273 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		DCAF789414E115EC00948273 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DCAF789514E115EC00948273 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCAF789C14E145FB00948273 /* BadgeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeTableViewCell.m; sourceTree = "<group>"; };
+		DCAF789D14E145FB00948273 /* BadgeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeTableViewCell.h; sourceTree = "<group>"; };
+		DCAF789E14E145FB00948273 /* BadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeLabel.h; sourceTree = "<group>"; };
+		DCAF789F14E145FC00948273 /* BadgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeLabel.m; sourceTree = "<group>"; };
+		DCAF78A214E147C400948273 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAF78A314E147C400948273 /* QuartzCore.framework in Frameworks */,
 				DCAF788014E115EB00948273 /* UIKit.framework in Frameworks */,
 				DCAF788214E115EB00948273 /* Foundation.framework in Frameworks */,
 				DCAF788414E115EB00948273 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +76,7 @@
 		DCAF787E14E115EB00948273 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCAF78A214E147C400948273 /* QuartzCore.framework */,
 				DCAF787F14E115EB00948273 /* UIKit.framework */,
 				DCAF788114E115EB00948273 /* Foundation.framework */,
 				DCAF788314E115EB00948273 /* CoreGraphics.framework */,
@@ -77,11 +87,15 @@
 		DCAF788514E115EB00948273 /* BadgeView */ = {
 			isa = PBXGroup;
 			children = (
+				DCAF789E14E145FB00948273 /* BadgeLabel.h */,
+				DCAF789F14E145FC00948273 /* BadgeLabel.m */,
+				DCAF789D14E145FB00948273 /* BadgeTableViewCell.h */,
+				DCAF789C14E145FB00948273 /* BadgeTableViewCell.m */,
+				DCAF789414E115EC00948273 /* ViewController.h */,
+				DCAF789514E115EC00948273 /* ViewController.m */,
 				DCAF788E14E115EB00948273 /* AppDelegate.h */,
 				DCAF788F14E115EB00948273 /* AppDelegate.m */,
 				DCAF789114E115EC00948273 /* MainStoryboard.storyboard */,
-				DCAF789414E115EC00948273 /* ViewController.h */,
-				DCAF789514E115EC00948273 /* ViewController.m */,
 				DCAF788614E115EB00948273 /* Supporting Files */,
 			);
 			path = BadgeView;
@@ -164,6 +178,8 @@
 				DCAF788C14E115EB00948273 /* main.m in Sources */,
 				DCAF789014E115EB00948273 /* AppDelegate.m in Sources */,
 				DCAF789614E115EC00948273 /* ViewController.m in Sources */,
+				DCAF78A014E145FC00948273 /* BadgeTableViewCell.m in Sources */,
+				DCAF78A114E145FC00948273 /* BadgeLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +291,7 @@
 				DCAF789B14E115EC00948273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

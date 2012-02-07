@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BadgeLabel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet BadgeLabel *badge;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+
+- (IBAction)sliderChanged;
+- (IBAction)badgeTapped;
 
 @end

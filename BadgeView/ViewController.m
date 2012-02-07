@@ -7,48 +7,98 @@
 //
 
 #import "ViewController.h"
+#import "BadgeTableViewCell.h"
+
+@interface ViewController () {
+    NSMutableArray *cells;
+}
+
+@end
 
 @implementation ViewController
 
-- (void)didReceiveMemoryWarning
+@synthesize badge;
+@synthesize slider;
+
+#pragma mark - Slider
+
+- (IBAction)sliderChanged
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    NSString *s = [NSString stringWithFormat:@"%d", lroundf(slider.value)];
+    badge.text = s;
+}
+
+- (IBAction)badgeTapped
+{
+    UIColor *badgeColor = badge.backgroundColor;
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         badge.backgroundColor = [UIColor blueColor];
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.5
+                                          animations:^{ badge.backgroundColor = badgeColor; }
+                          ];
+                     }
+     ];
+}
+
+#pragma mark - Table View
+
+- (void)initCells
+{
+    cells = [[NSMutableArray alloc] initWithCapacity:3];
+    BadgeTableViewCell *cell;
+    for (int i = 0; i < 3; ++i) {
+        cell = [[BadgeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", i];
+        cell.badgeText = [NSString stringWithFormat:@"%d", lround( pow(7, 1+i) )];
+        [cells addObject:cell];
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [cells count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [cells objectAtIndex:indexPath.row];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BadgeTableViewCell *cell = [cells objectAtIndex:indexPath.row];
+    UIColor *cellBadgeColor = cell.badge.backgroundColor;
+    [UIView animateWithDuration:0.5
+                     animations:^{ cell.badge.backgroundColor = [UIColor orangeColor]; }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.5
+                                          animations:^{ cell.badge.backgroundColor = cellBadgeColor; }
+                                          completion:^(BOOL finished){ [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
+                          ];
+                     }
+     ];
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
+    [self initCells];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[badge setStyle:BadgeLabelStyleAppIcon];
+    [self sliderChanged];
+    [badge addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(badgeTapped)]];
 }
 
 - (void)viewDidUnload
 {
+    [self setBadge:nil];
+    [self setSlider:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
+    cells = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
