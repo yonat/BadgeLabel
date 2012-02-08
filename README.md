@@ -4,3 +4,5 @@
 **BadgeTableViewCell**.[mh] - a UITableViewCell with a Mail.app style badge.
 
 Unlike CoreGraphics based badges, this badge class can allows the flexibility and power of CoreAnimation layers - run the demo app to see how easy it is.
+
+**Note**: To use BadgeLabel you need to link QuartzCore.framework .
