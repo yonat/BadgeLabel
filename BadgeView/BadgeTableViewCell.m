@@ -15,7 +15,7 @@
 
 - (void)layoutBadge
 {
-    if (badge == nil || [badge.text length] == 0) return;
+    if (badge == nil || badge.hidden || [badge.text length] == 0) return;
     CGRect badgeFrame = badge.frame;
     CGRect contentBounds = self.contentView.bounds;
     badgeFrame.origin.y = contentBounds.origin.y + (contentBounds.size.height - badgeFrame.size.height) / 2;
@@ -32,8 +32,8 @@
 
 - (NSInteger)badgeNumber
 {
-    if (self.badge) {
-        return [self.badge.text integerValue];
+    if (badge && !badge.hidden) {
+        return [badge.text integerValue];
     }
     return 0;
 }
