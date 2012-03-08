@@ -82,7 +82,7 @@
 {
     switch (style) {
         case BadgeLabelStyleAppIcon:
-            self.backgroundColor = [UIColor colorWithRed:186.0f/255 green:0 blue:0 alpha:1];
+            self.backgroundColor = [UIColor colorWithRed:214.0f/255 green:0 blue:0 alpha:1];
             self.hasBorder = YES;
             self.hasShadow = YES;
             self.hasGloss = YES;
@@ -151,9 +151,13 @@
 - (void)sizeToFit
 {
 	[super sizeToFit];
+    CGFloat border = self.layer.borderWidth;
+    CGRect newFrame = self.frame;
+    newFrame.size.height += border;
+    newFrame.size.width += 2+border;
+    self.frame = newFrame;
     CGFloat w = MAX(minWidth, self.bounds.size.height);
     if (self.bounds.size.width < w) {
-        CGRect newFrame = self.frame;
         newFrame.size.width = w;
         self.frame = newFrame;
     }
@@ -163,13 +167,16 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines
 {
-	CGRect r = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    CGFloat border = self.layer.borderWidth;
+	CGRect r = [super textRectForBounds:CGRectInset(bounds, border/2, border) limitedToNumberOfLines:numberOfLines];
 	r.size.width += r.size.height / 2;
 	return r;
 }
 
 - (void)drawTextInRect:(CGRect)rect
 {
+    CGFloat border = self.layer.borderWidth;
+    rect = CGRectInset(rect, border/2, border);
 	rect.origin.x += rect.size.height / 4;
 	rect.size.width -= rect.size.height / 2;
 	[super drawTextInRect:rect];
