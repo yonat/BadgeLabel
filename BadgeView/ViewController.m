@@ -24,7 +24,7 @@
 
 - (IBAction)sliderChanged
 {
-    NSString *s = [NSString stringWithFormat:@"%d", lroundf(slider.value)];
+    NSString *s = [NSString stringWithFormat:@"%ld", lroundf(slider.value)];
     badge.text = s;
 }
 

@@ -116,7 +116,7 @@
 		[self initBadge];
         self.textColor = [UIColor whiteColor];
         self.font = [UIFont boldSystemFontOfSize:17];
-        self.textAlignment = UITextAlignmentCenter;
+        self.textAlignment = NSTextAlignmentCenter;
         self.backgroundColor = [UIColor blueColor];
 	}
 
