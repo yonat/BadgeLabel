@@ -125,6 +125,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initBadge];
 }
 

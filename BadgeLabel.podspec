@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "BadgeLabel"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "Simple animatable badge, based on UILabel and using CALayer"
 
   s.description  = <<-DESC
@@ -29,9 +29,9 @@ badge.hasGloss = NO;
   s.author             = { "Yonat Sharon" => "yonat@ootips.org" }
   s.social_media_url   = "http://twitter.com/yonatsharon"
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/yonat/BadgeLabel.git", :commit => "c15b3fbc5b49bf3336c6e9c688e413d7cc7f97bf", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/yonat/BadgeLabel.git", :tag => s.version }
 
   s.source_files  = "BadgeLabel.{h,m}", "BadgeTableViewCell.{h,m}"
   s.exclude_files = "BadgeView", "BadgeView.xcodeproj"

@@ -49,7 +49,7 @@
         [self createBadge];
     }
 
-    badge.text = [NSString stringWithFormat:@"%d", badgeNumber];
+    badge.text = [NSString stringWithFormat:@"%d", (int)badgeNumber];
     badge.hidden = NO;
     [self layoutBadge];
 }

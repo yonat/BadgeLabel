@@ -31,6 +31,7 @@
 - (IBAction)badgeTapped
 {
     UIColor *badgeColor = badge.backgroundColor;
+    BadgeLabel* badge = self.badge;
     [UIView animateWithDuration:0.5
                      animations:^{
                          badge.backgroundColor = [UIColor blueColor];
@@ -91,20 +92,6 @@
 	[badge setStyle:BadgeLabelStyleAppIcon];
     [self sliderChanged];
     [badge addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(badgeTapped)]];
-}
-
-- (void)viewDidUnload
-{
-    [self setBadge:nil];
-    [self setSlider:nil];
-    [super viewDidUnload];
-    cells = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end
